@@ -8,12 +8,12 @@ let modalOpen = false;
 // Close and Open Modal Functions
 var closeModal = function () {
     modal.classList.remove("show-modal");
-    button.innerText = "Who's got this?";
+    button.innerText = "Any other questions?";
 };
 
 var openModal = function () {
     modal.classList.add("show-modal");
-    button.innerText = "You've got this!!!";
+    button.innerText = "Close Modal";
 };
 
 // Esc and Click Events
