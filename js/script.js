@@ -9,34 +9,31 @@ let modalOpen = false;
 var closeModal = function () {
     modal.classList.remove("show-modal");
     button.innerText = "Any other questions?";
+    modalOpen = false;
 };
 
 var openModal = function () {
     modal.classList.add("show-modal");
     button.innerText = "Close Modal";
+    modalOpen = true;
 };
 
 // Esc and Click Events
 button.addEventListener("click", function () {
     if (!modalOpen) {
         openModal();
-        modalOpen = true;
     } else {
         closeModal();
-        modalOpen = false;
     }
 });
 
 modalX.addEventListener("click", function () {
     closeModal();
-    modalOpen = false;
 });
 
 document.addEventListener("keydown", function (e) {
     // console.log(e.key);
-    if (e.key === "Escape") {
-        if (modal.classList.contains("show-modal")) {
-            closeModal();
-        }
+    if (e.key === "Escape" && modal.classList.contains("show-modal")) {
+        closeModal();
     }
 });
